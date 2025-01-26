@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'Roboto' , sans-serif;
+}
+
+.navbar{
+    display: flex;
+    flex-flow: row wrap;
+    background: white;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    flex: 20%;
+    margin-left: 10%;
+    /* border: 1px solid red; */
+    text-align: center;
+}
+
+.logo h1{
+    font-family: 'lobster' , cursive;
+    color: #180f4a;
+    font-size: 34px;
+}
+
+.menu{
+    flex: 70%;
+    /* border: 1px solid green; */
+    text-align: right;
+    padding: 20px;
+}
+
+.menu a{
+    color: #180f4a;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 16px;
+}
+
+.menu a:hover{
+    color: #dd1818;
+    border-top: 4px solid #180f4a;
+}
+
+#botao{
+    background: #180f4a;
+    padding: 10px 25px;
+    color: white;
+    border-radius: 5px;
+   margin-right: 10%;
+   margin-left: 5%;
+}
+
+#botao:hover{
+    border: none;
+    background: #dd1818;
+}
+
+.header{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    background: rgb(162, 142, 248);
+}
+
+.headline{
+    margin-left: 10%;
+    flex: 40%;
+    
+
+}
+
+.header h2{
+    font-weight: 900;
+    font-size: 20px;
+    color: #180f4a;
+    padding: 0;
+    margin: 0;
+}
+
+.img-headline{
+    margin-right: 10%;
+    flex: 40%;
+    /*border: 1px solid deeppink;*/
+    text-align: center;
+}
+
+section {
+    margin-top: 80px;
+    border: 1px solid black;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 400px;
+}
+
+section h2 {
+    width: 100%;
+    font-size: 50px;
+    margin: 0;
+    font-family: 'lobster', cursive;
+    font-weight: bold;
+    color: #180f4a;
+    
+}
+
+
+
+
