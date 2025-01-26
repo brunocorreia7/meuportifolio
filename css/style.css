@@ -96,6 +96,64 @@ body{
     text-align: center;
 }
 
+section {
+    display: inline-block;
+    margin-top: 80px;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 5%;
+    text-align: center;
+    
+}
+
+section h2 {
+    width: 100%;
+    font-size: 50px;
+    margin: 0;
+    font-family: 'lobster' , cursive;
+    font-weight: bold;
+    color: #180f4a;
+}
+
+.servicos {
+    display: inline-block;
+    margin-top: 5%;
+}
+
+.card {
+    display: inline-block;
+    width: 30%;
+    padding: 20px;
+    margin: 1%;
+    border: 1px solid #5d5af7;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.texto-oculto {
+    display: none;
+}
+
+.card:hover {
+    background: #2724e0;
+    color: white;
+    padding: 40px;
+}
+
+.card:hover img {
+    display: none;
+
+
+}
+
+.card:hover .card-text {
+    display: none;
+
+}
+
+.card:hover .texto-oculto {
+    display: block;
+}
 
 
 
