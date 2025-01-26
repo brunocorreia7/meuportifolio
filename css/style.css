@@ -96,23 +96,8 @@ body{
     text-align: center;
 }
 
-section {
-    margin-top: 80px;
-    border: 1px solid black;
-    margin-left: 5%;
-    margin-right: 5%;
-    height: 400px;
-}
 
-section h2 {
-    width: 100%;
-    font-size: 50px;
-    margin: 0;
-    font-family: 'lobster', cursive;
-    font-weight: bold;
-    color: #180f4a;
-    
-}
+
 
 
 
