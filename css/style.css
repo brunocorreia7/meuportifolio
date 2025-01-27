@@ -18,6 +18,8 @@ body{
     height: 100px;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    width: 100%;
 }
 
 .logo{
@@ -72,6 +74,7 @@ body{
     justify-content: center;
     align-items: center;
     background: rgb(162, 142, 248);
+    padding-top: 100px;
 }
 
 .headline{
