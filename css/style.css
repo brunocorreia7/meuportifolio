@@ -155,8 +155,24 @@ section h2 {
     display: block;
 }
 
+footer {
+    margin-top: 100px;
+    height: 400px;
+    background-image:linear-gradient(180deg, #180f4a, #090422, black);
+    text-align: center;
+    border-top: 5px solid #180f4a;
+}
 
 
+.logo-rodape {
+    padding: 100px;
 
+}
+
+.agencia {
+    font-family: 'lobster', cursive;
+    color: white;
+    font-family: 34px;
+}
 
 
