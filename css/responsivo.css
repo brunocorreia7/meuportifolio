@@ -5,8 +5,8 @@
 
     .menu {
         display: flex;
-        flex-direction: column;  
-        align-items: center;     
+        flex-direction: column;
+        align-items: center;
         width: 100%;
     }
 
@@ -29,6 +29,15 @@
         margin: 2px;
         word-wrap: break-word;
         word-break: break-word;
+        font-size: 30px; /* Reduzir o tamanho da fonte em telas pequenas */
+    }
+
+    .headline h2:nth-child(2) {
+        font-size: 40px; /* Ajuste o tamanho para o nome em telas pequenas */
+    }
+
+    .headline h2:nth-child(3) {
+        font-size: 60px; /* Ajuste o tamanho para a descrição do cargo em telas pequenas */
     }
 
     .headline p {
