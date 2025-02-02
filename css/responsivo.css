@@ -2,9 +2,9 @@
     .navbar{
         position: relative;
     }
-    .menu{
-        display: none;
-    }
+    .menu {
+        display: flex; 
+        justify-content: space-between;
     .logo{
         margin: 0;
         text-align: center;
