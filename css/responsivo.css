@@ -17,11 +17,15 @@
 
     .header {
         padding-top: 50px;
+        display: flex;
+        flex-direction: row; /* Organiza os itens lado a lado */
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
     }
 
     .headline {
-        flex: 100%;
-        margin: 5%;
+        flex: 50%; /* Ajusta a largura para ocupar 50% da tela */
         text-align: center;
     }
 
@@ -29,25 +33,24 @@
         margin: 2px;
         word-wrap: break-word;
         word-break: break-word;
-        font-size: 30px; /* Reduzir o tamanho da fonte em telas pequenas */
+        font-size: 30px; /* Ajuste para o título */
     }
 
     .headline h2:nth-child(2) {
-        font-size: 40px; /* Ajuste o tamanho para o nome em telas pequenas */
+        font-size: 35px; /* Ajuste para o nome */
     }
 
     .headline h2:nth-child(3) {
-        font-size: 60px; /* Ajuste o tamanho para a descrição do cargo em telas pequenas */
-    }
-
-    .headline p {
-        text-align: center;
+        font-size: 40px; /* Ajuste para a descrição */
     }
 
     .img-headline {
-        flex: 100%;
-        margin: 5%;
+        flex: 50%; /* Ajusta a imagem para ocupar 50% da tela */
         text-align: center;
+    }
+
+    .img-headline img {
+        max-width: 100%; /* Garante que a imagem não ultrapasse o tamanho da tela */
     }
 
     .card {
