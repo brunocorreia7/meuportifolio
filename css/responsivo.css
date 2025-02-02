@@ -4,10 +4,10 @@
     }
 
     .menu {
-        display: flex;  
-        flex-direction: row;  /* Para exibir os itens na horizontal */
-        justify-content: center;
-        align-items: center;
+        display: flex;
+        flex-direction: column;  
+        align-items: center;     
+        width: 100%;
     }
 
     .logo {
