@@ -1,23 +1,42 @@
-#botao-rodape {
-    background: #180f4a;
-    padding: 10px 25px;
-    color: white;
-    border-radius: 5px;
-    margin: 0 5px; /* Adiciona espaçamento horizontal entre os botões */
-    text-decoration: none;
-    display: inline-block; /* Garante que o margin funcione corretamente */
-}
+@media screen and (max-width:1005px){
+    .navbar{
+        position: relative;
+    }
+    .menu{
+        display: none;
+    }
+    .logo{
+        margin: 0;
+        text-align: center;
+    }
+    .header{
+        padding-top: 50px;
+    }
 
-#botao-rodape:hover { /* Removido o espaço antes de :hover */
-    border: none;
-    background: #dd1818;
-}
+    .headline{
+        flex: 100%;
+        margin: 5%;
+        text-align: center;
+    }
 
-.footer-buttons {
-    text-align: center; /* Centraliza os botões */
-    margin-top: 10px; /* Espaço extra acima dos botões */
-}
+    .headline h2{
+        margin: 2px;
+        word-wrap: break-word;
+        word-break: break-word;
 
-.footer-buttons a {
-    display: inline-block; /* Mantém os botões alinhados corretamente */
+    }
+
+    .headline p{
+        text-align: center;
+    }
+
+    .img-headline{
+        flex: 100%;
+        margin: 5%;
+        text-align: center;
+    }
+
+    .card{
+        width: 100%;
+    }
 }
