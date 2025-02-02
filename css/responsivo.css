@@ -1,47 +1,42 @@
-@media screen and (max-width: 1005px) {
-    .navbar {
+@media screen and (max-width:1005px){
+    .navbar{
         position: relative;
     }
-
-    .menu {
-        display: flex;
-        flex-direction: row;  
-        align-items: center;     
-        width: 30%;
+    .menu{
+        display: none;
     }
-
-    .logo {
+    .logo{
         margin: 0;
         text-align: center;
     }
-
-    .header {
+    .header{
         padding-top: 50px;
     }
 
-    .headline {
+    .headline{
         flex: 100%;
         margin: 5%;
         text-align: center;
     }
 
-    .headline h2 {
+    .headline h2{
         margin: 2px;
         word-wrap: break-word;
         word-break: break-word;
+
     }
 
-    .headline p {
+    .headline p{
         text-align: center;
     }
 
-    .img-headline {
+    .img-headline{
         flex: 100%;
         margin: 5%;
         text-align: center;
     }
 
-    .card {
+    .card{
         width: 100%;
     }
 }
