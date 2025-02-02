@@ -1,0 +1,22 @@
+body{
+    background-color: brown;
+}
+
+h1,h2{
+    color: chartreuse;
+}
+
+/* por id */
+#paragrafo{
+    color: blue;
+}
+
+
+/* por classe */
+.colorindo{
+    color: aliceblue;
+}
+
+.centralizar{
+    text-align: center;
+}

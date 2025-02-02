@@ -7,6 +7,7 @@
     <meta name="keywords" content="programação, desenvolvimento, portifolio">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsivo.css">
+    <link rel="stylesheet" href="css/modal.css">
     <title>Bruno Correia</title>
 </head>
 <body>
@@ -15,12 +16,22 @@
             <h1>Bruno Correia</h1>
         </div>
         <div class="menu">
-            <a href="#header">Home</a>
-            <a href="#">Sobre mim</a>
+            <a href="#">Home</a>
+            <a href="#" id="sobre-link">Sobre mim</a>
             <a href="#habilidades">Habilidades</a>
             <a id="botao" href="https://github.com/brunocorreia7/Sistema-de-Cadastro-Loja" target="_blank">Projetos</a>
         </div>
     </nav>
+
+    <div id="sobre-modal" class="modal">
+        <div class="modal-content">
+            <h2>Sobre mim</h2>
+            <p>Sou um desenvolvedor de software que gosta muito de tecnologia, e que faz faculdade de analise e desenvolvimento de sistemas.</p>
+            <button class="close-btn">Fechar</button>
+        </div>
+    </div>
+
+
     <header class="header">
         <div class="headline">
             <h2 style="font-size: 50px;">Bem vindo!</h2>
@@ -42,33 +53,39 @@
                 <img src="web.png">
                 <div class="card-text">
                 <h3>Desenvolvimento web</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aut facilis ullam ad consequuntur cumque quam possimus dicta, eaque exercitationem temporibus enim dolores fuga? Maxime voluptates optio magni enim voluptatibus.</p>
+                <p>Desenvolvo aplicações web focadas em performance e usabilidade, unindo front-end e back-end para criar soluções completas e eficientes.</p>
             </div>
             <div class="texto-oculto">
-                <h3>outro conteudo</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aut facilis ullam ad consequuntur cumque quam possimus dicta, eaque exercitationem temporibus enim dolores fuga? Maxime voluptates optio magni enim voluptatibus.</p>
+                <h3>Sobre desenvolvimento web</h3>
+                <p>Desenvolvimento web é o processo de criação de sites, aplicações e sistemas que funcionam na internet. Isso envolve desde o desenvolvimento do front-end (a parte visual e interativa que o usuário vê e usa) até o back-end (a parte responsável por processar dados, armazenar informações e garantir o funcionamento do site).</p>
             </div>
             </div>
             <div class="card">
                 <img src="pc.png">
                 <div class="card-text">
                 <h3>Minha stack</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aut facilis ullam ad consequuntur cumque quam possimus dicta, eaque exercitationem temporibus enim dolores fuga? Maxime voluptates optio magni enim voluptatibus.</p>
+                <p>No front end: HTML, CSS, Javascript e Bootstrap. No backend: PHP, Laravel e Banco de dados Mysql. Para versionamento de código uso Git.
+                    
+                </p>
             </div>
             <div class="texto-oculto">
-                <h3>outro conteudo</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aut facilis ullam ad consequuntur cumque quam possimus dicta, eaque exercitationem temporibus enim dolores fuga? Maxime voluptates optio magni enim voluptatibus.</p>
+                <h3>Outros conhecimentos</h3>
+                <p>Conhecimentos em Programação orientada a objetos, e Scrum. Também sei programar com a linguagem Python.</p>
             </div>
             </div>
             <div class="card">
                 <img src="cursos.png">
                 <div class="card-text">
                 <h3>Cursos</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aut facilis ullam ad consequuntur cumque quam possimus dicta, eaque exercitationem temporibus enim dolores fuga? Maxime voluptates optio magni enim voluptatibus.</p>
+                <p>Versionamento de código. introdução a banco de dados relacionais. Gestão de projetos. inglês: vocabulário essencial. Bootcamp Python Backend developer.
+
+                </p>
             </div>
             <div class="texto-oculto">
-                <h3>outro conteudo</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aut facilis ullam ad consequuntur cumque quam possimus dicta, eaque exercitationem temporibus enim dolores fuga? Maxime voluptates optio magni enim voluptatibus.</p>
+                <h3>mais cursos</h3>
+                <p>Atualmente estou fazendo um curso de Laravel na Udemy.
+                    No meu Linkedln você pode conferir meus certificados.
+                </p>
             </div>
             </div>
 
@@ -80,14 +97,15 @@
     
     <footer>
         <div class="logo-rodape">
-            <h1 class="agencia">Linkedn e Github</h1>
-            <p style="color: white;">Cursando Analise e desenvolvimento de sistemas, foco em desenvolvimeno web.</p>
-            <a href="https://www.linkedin.com/in/bruno-correia-461a76233/" target="_blank">Meu linkedn</a>
-            <br>
-            <a href="https://github.com/brunocorreia7" target="_blank">meu github</a>
+            <h1 class="agencia">Link das minhas Redes</h1>
+            <p style="color: white;">clique nos botões para acessar</p>
+            <a id="botao-rodape" href="https://github.com/brunocorreia7" target="_blank">Linkedln</a>
+            <a id="botao-rodape" href="https://github.com/brunocorreia7" target="_blank">Github</a>
         </div>
-        <strong style="color: white;">© Portifolio Bruno Correia</strong>
+        <strong style="color: white;">© Bruno Correia</strong>
     </footer>
+
+    <script src="script.js"></script>
     
 </body>
 </html>

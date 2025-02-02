@@ -1,0 +1,25 @@
+body{
+    background-color: white;
+}
+
+h1{
+    color: rgb(49, 178, 196);
+    border: 3px solid blue;
+    border-radius: 10px;
+    text-align: center;
+    background: black;
+    margin-top: 30px;
+    margin-bottom: 80px;
+   
+}
+
+p{
+    color: chartreuse;
+    margin-bottom: 30px;
+}
+
+.exemplo{
+    height: 300px;
+    background: gray url(fundoimagem.jpg) no-repeat center;
+    background-size: cover;
+}
