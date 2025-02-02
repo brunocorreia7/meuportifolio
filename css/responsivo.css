@@ -1,53 +1,42 @@
-@media screen and (max-width: 1005px) {
-    .navbar {
+@media screen and (max-width:1005px){
+    .navbar{
         position: relative;
     }
-
-    /* Escondendo o menu na versão móvel */
-    .menu {
+    .menu{
         display: none;
-        flex-direction: column;
-        width: 100%;
+    }
+    .logo{
+        margin: 0;
         text-align: center;
-        background-color: #333;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        padding: 10px 0;
+    }
+    .header{
+        padding-top: 50px;
     }
 
-    .menu a {
-        padding: 10px;
-        color: white;
-        text-decoration: none;
-        display: block;
+    .headline{
+        flex: 100%;
+        margin: 5%;
+        text-align: center;
     }
 
-    /* Exibindo o ícone de hambúrguer */
-    .hamburger {
-        display: block;
-        cursor: pointer;
-        position: absolute;
-        top: 20px;
-        right: 20px;
+    .headline h2{
+        margin: 2px;
+        word-wrap: break-word;
+        word-break: break-word;
+
     }
 
-    .hamburger .bar {
-        width: 30px;
-        height: 4px;
-        margin: 5px;
-        background-color: white;
-        border-radius: 3px;
+    .headline p{
+        text-align: center;
     }
 
-    /* Exibindo o menu quando o ícone de hambúrguer for clicado */
-    .menu.active {
-        display: flex;
+    .img-headline{
+        flex: 100%;
+        margin: 5%;
+        text-align: center;
     }
-}
 
-@media screen and (min-width: 1006px) {
-    .hamburger {
-        display: none; /* Esconde o ícone de hambúrguer em telas maiores */
+    .card{
+        width: 100%;
     }
 }
