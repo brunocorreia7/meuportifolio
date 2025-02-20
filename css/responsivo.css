@@ -1,59 +1,79 @@
-@media screen and (max-width:1005px){
-    .navbar{
+@media screen and (max-width:1005px) {
+    .navbar {
         position: relative;
     }
-    .menu{
+
+    .menu {
         display: none;
     }
-    .logo{
+
+    .logo {
         margin: 0;
         text-align: center;
     }
-    .header{
+
+    .header {
         padding-top: 50px;
     }
 
-    .headline{
+    .headline {
         flex: 100%;
         margin: 5%;
         text-align: center;
     }
 
-    .headline h2{
+    .headline h2 {
         margin: 2px;
         word-wrap: break-word;
         word-break: break-word;
-
     }
 
-    .headline p{
+    .headline p {
         text-align: center;
     }
 
-    .img-headline{
+    .img-headline {
         flex: 100%;
         margin: 5%;
         text-align: center;
     }
 
-    .card{
+    .card {
         width: 100%;
     }
-}
 
-#botaofooter {
-    display: inline-block;
-    background: #180f4a;
-    padding: 10px 25px;
-    color: white;
-    border-radius: 5px;
-    margin-right: 2%;
-    margin-left: 1%;
-    text-decoration: none;
-}
+    /* ✅ Ajuste no footer para botões alinhados e botão Projetos visível */
+    .logo-rodape {
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-#botaofooter:hover {
-    border: none;
-    background: #dd1818;
-}
+    .logo-rodape a {
+        margin: 10px 0;
+        width: 80%;
+        text-align: center;
+        background: #180f4a;
+        padding: 10px 25px;
+        color: white;
+        border-radius: 5px;
+        text-decoration: none;
+    }
 
+    .logo-rodape a:hover {
+        border: none;
+        background: #dd1818;
+    }
+
+    /* 🔓 Exibe o botão "Projetos" no footer apenas na versão mobile */
+    #botaofooter {
+        display: inline-block;
+    }
+
+    @media screen and (max-width: 600px) {
+        .logo-rodape a {
+            width: 100%;
+        }
+    }
+}
