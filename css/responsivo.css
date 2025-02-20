@@ -40,3 +40,20 @@
         width: 100%;
     }
 }
+
+#botaofooter {
+    display: inline-block;
+    background: #180f4a;
+    padding: 10px 25px;
+    color: white;
+    border-radius: 5px;
+    margin-right: 2%;
+    margin-left: 1%;
+    text-decoration: none;
+}
+
+#botaofooter:hover {
+    border: none;
+    background: #dd1818;
+}
+
