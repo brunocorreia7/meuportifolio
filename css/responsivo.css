@@ -1,79 +1,174 @@
-@media screen and (max-width:1005px) {
+/* =========================================================
+   MEDIA QUERY PARA TABLETS E CELULARES (ABAIXO DE 1005PX)
+   Aqui está a mágica do menu hambúrguer!
+   ========================================================= */
+@media screen and (max-width: 1005px) {
+    
+    /* --- Ajustes Gerais da Navbar para Mobile --- */
     .navbar {
-        position: relative;
+        height: 80px; /* Reduzida um pouco a altura */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 0 5%;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
+    .logo h1 {
+        font-size: 28px; /* Texto do logo menor */
+    }
+
+    /* --- Estilização do Botão Hambúrguer --- */
+    .hamburger {
+        display: block; /* Visível no mobile */
+        cursor: pointer;
+        background: none;
+        border: none;
+        z-index: 1001; /* Fica acima do menu aberto */
+        padding: 0;
+    }
+
+    .bar {
+        display: block;
+        width: 28px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: #180f4a;
+        transition: all 0.3s ease-in-out;
+        border-radius: 3px;
+    }
+
+    /* Animação do Hambúrguer para 'X' quando ativo (aberto) */
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0; /* Linha do meio some */
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg); /* Linha superior vira barra do X */
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg); /* Linha inferior vira a outra barra do X */
+    }
+
+    /* --- Estilização do Menu Mobile (Deslizante) --- */
     .menu {
-        display: none;
+        display: flex; /* Flex para alinhar itens em coluna */
+        position: fixed;
+        left: -100%; /* Escondido fora da tela (à esquerda) */
+        top: 80px; /* Começa exatamente abaixo da navbar */
+        flex-direction: column;
+        justify-content: flex-start; /* Alinha no topo do menu */
+        background-color: #fff;
+        width: 75%; /* Ocupa 75% da largura da tela */
+        height: calc(100vh - 80px); /* Ocupa toda a altura visível abaixo da navbar */
+        text-align: center;
+        transition: left 0.4s ease-in-out; /* Animação suave de deslizamento */
+        box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+        z-index: 1000;
+        padding-top: 40px; /* Padding interno no topo do menu */
     }
 
-    .logo {
+    /* Classe ativada pelo JS para mostrar o menu */
+    .menu.active {
+        left: 0; /* Desliza para dentro da tela */
+    }
+
+    .menu-item {
+        width: 100%;
+        display: block;
         margin: 0;
+        padding: 15px;
+        color: #180f4a;
+        font-size: 19px;
+        font-weight: 500;
+        transition: background 0.3s;
+    }
+
+    .menu-item:not(#botao):hover {
+        background-color: #f4f4f4;
+        box-shadow: none; /* Remove a sombra do desktop */
+        color: #dd1818;
+    }
+
+    /* Ajuste específico para o botão de Projetos DENTRO do menu mobile */
+    #botao {
+        background: #180f4a;
+        color: white;
+        margin: 20px auto; /* Centralizado com margem top/bottom */
+        width: 85%; /* Botão largo centralizado */
+        border-radius: 5px;
+        padding: 12px;
+        display: block;
         text-align: center;
     }
 
+    /* --- Overlay Negrescido (Fundo) --- */
+    .menu-overlay {
+        display: none; /* Escondido por padrão */
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro semitransparente */
+        z-index: 999; /* Fica entre a página e o menu mobile */
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+
+    /* Classe ativada pelo JS para mostrar o overlay */
+    .menu-overlay.active {
+        display: block;
+        opacity: 1;
+    }
+
+    /* --- Ajustes de Cabeçalho no Mobile --- */
     .header {
-        padding-top: 50px;
+        padding-top: 130px; /* Espaço para navbar fixa */
+        text-align: center;
     }
 
     .headline {
         flex: 100%;
-        margin: 5%;
-        text-align: center;
+        margin-right: 0;
+        margin-bottom: 40px;
     }
 
-    .headline h2 {
-        margin: 2px;
-        word-wrap: break-word;
-        word-break: break-word;
-    }
-
-    .headline p {
-        text-align: center;
-    }
+    /* Reduzindo os tamanhos do cabeçalho */
+    .header h2 { margin-bottom: 5px; }
+    .header-bemvindo { font-size: 30px !important; }
+    .header-subnome { font-size: 16px !important; letter-spacing: 5px !important; }
+    .header-titulo { font-size: 40px !important; line-height: 1.1; }
 
     .img-headline {
         flex: 100%;
         margin: 5%;
-        text-align: center;
     }
 
+    /* --- Ajustes de Habilidades no Mobile --- */
     .card {
+        flex: 1 1 100%; /* 1 card por linha no mobile */
         width: 100%;
     }
 
-    /* ✅ Ajuste no footer para botões alinhados e botão Projetos visível */
-    .logo-rodape {
-        padding: 50px;
-        display: flex;
+    /* ✅ Ajuste no footer para botões alinhados */
+    .botoes-rodape-container {
         flex-direction: column;
         align-items: center;
+        gap: 10px;
     }
 
-    .logo-rodape a {
-        margin: 10px 0;
-        width: 80%;
-        text-align: center;
-        background: #180f4a;
-        padding: 10px 25px;
-        color: white;
-        border-radius: 5px;
-        text-decoration: none;
+    #botao-rodape, #botaofooter {
+        width: 100%;
+        max-width: 300px;
+        margin: 0;
     }
 
-    .logo-rodape a:hover {
-        border: none;
-        background: #dd1818;
-    }
-
-    /* 🔓 Exibe o botão "Projetos" no footer apenas na versão mobile */
+    /* 🔓 Exibe o botão "Projetos" no footer no mobile */
     #botaofooter {
         display: inline-block;
-    }
-
-    @media screen and (max-width: 600px) {
-        .logo-rodape a {
-            width: 100%;
-        }
     }
 }
