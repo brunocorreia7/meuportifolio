@@ -1,90 +1,115 @@
+/* --- IMPORTS DE FONTES (RECUPERADOS) --- */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-*{
+/* --- RESET E ESTILOS GERAIS --- */
+* {
     box-sizing: border-box;
 }
 
-body{
+body {
     margin: 0;
-    font-family: 'Roboto' , sans-serif;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden; /* Previne scroll horizontal acidental */
 }
 
-.navbar{
+/* Classe auxiliar para o JS (impede scroll quando menu aberto) */
+.no-scroll {
+    overflow: hidden;
+}
+
+/* --- NAVBAR (Estrutura ajustada para o hambúrguer, mantendo visual desktop) --- */
+.navbar {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row wrap; /* Mantido flex-flow original */
     background: white;
     height: 100px;
-    justify-content: center;
+    justify-content: center; /* Mantido original */
     align-items: center;
     position: fixed;
+    top: 0; /* Adicionado para garantir posição */
+    left: 0;
     width: 100%;
+    z-index: 1000;
 }
 
-.logo{
+.logo {
     flex: 20%;
     margin-left: 10%;
-    /* border: 1px solid red; */
+    /* border: 1px solid red; */ /* REINSERIDO SEU COMENTÁRIO */
     text-align: center;
 }
 
-.logo h1{
-    font-family: 'lobster' , cursive;
+.logo h1 {
+    font-family: 'Lobster', cursive;
     color: #180f4a;
     font-size: 34px;
+    margin: 0; /* Ajuste fino */
 }
 
-.menu{
+/* Escondido no desktop por padrão */
+.hamburger {
+    display: none;
+}
+
+.menu {
     flex: 70%;
-    /* border: 1px solid green; */
+    /* border: 1px solid green; */ /* REINSERIDO SEU COMENTÁRIO */
     text-align: right;
     padding: 20px;
 }
 
-.menu a{
+.menu-item {
     color: #180f4a;
     text-decoration: none;
     font-size: 20px;
     padding: 20px 16px;
+    display: inline-block; /* Garante comportamento correto */
 }
 
-.menu a:hover{
+.menu-item:not(#botao):hover {
     color: #dd1818;
     border-top: 4px solid #180f4a;
 }
 
-#botao{
+/* Botão Projetos (na Navbar) */
+#botao {
     background: #180f4a;
     padding: 10px 25px;
     color: white;
     border-radius: 5px;
-   margin-right: 10%;
-   margin-left: 5%;
-}
-
-#botao:hover{
+    margin-right: 10%;
+    margin-left: 5%;
     border: none;
-    background: #dd1818;
+    cursor: pointer;
 }
 
-.header{
+#botao:hover {
+    background: #dd1818;
+    border: none; /* Mantido original */
+}
+
+/* Overlay do menu mobile (escondido no desktop) */
+.menu-overlay {
+    display: none;
+}
+
+/* --- HEADER --- */
+.header {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
     background: rgb(162, 142, 248);
-    padding-top: 100px;
+    padding-top: 100px; /* Compensa navbar fixa */
 }
 
-.headline{
+.headline {
     margin-left: 10%;
     flex: 40%;
-    
-
 }
 
-.header h2{
+.header h2 {
     font-weight: 900;
     font-size: 20px;
     color: #180f4a;
@@ -92,13 +117,14 @@ body{
     margin: 0;
 }
 
-.img-headline{
+.img-headline {
     margin-right: 10%;
     flex: 40%;
-    /*border: 1px solid deeppink;*/
+    /*border: 1px solid deeppink;*/ /* REINSERIDO SEU COMENTÁRIO */
     text-align: center;
 }
 
+/* --- SEÇÃO HABILIDADES --- */
 section {
     display: inline-block;
     margin-top: 80px;
@@ -106,21 +132,22 @@ section {
     margin-right: 5%;
     padding: 5%;
     text-align: center;
-    
+    width: 90%; /* Ajuste para centralizar melhor */
 }
 
 section h2 {
     width: 100%;
     font-size: 50px;
     margin: 0;
-    font-family: 'lobster' , cursive;
+    font-family: 'Lobster', cursive;
     font-weight: bold;
     color: #180f4a;
 }
 
-.servicos {
+.servicos-container {
     display: inline-block;
     margin-top: 5%;
+    width: 100%;
 }
 
 .card {
@@ -131,6 +158,9 @@ section h2 {
     border: 1px solid #5d5af7;
     border-radius: 10px;
     cursor: pointer;
+    vertical-align: top; /* Alinha cards no topo */
+    background-color: #fff;
+    transition: all 0.3s ease;
 }
 
 .texto-oculto {
@@ -145,40 +175,79 @@ section h2 {
 
 .card:hover img {
     display: none;
-
-
 }
 
 .card:hover .card-text {
     display: none;
-
 }
 
 .card:hover .texto-oculto {
     display: block;
 }
 
+/* --- MODAL --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.open {
+    display: flex;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+}
+
+.close-btn {
+    background-color: #dd1818;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* --- RODAPÉ --- */
 footer {
     margin-top: 100px;
     height: 400px;
-    background-image:linear-gradient(180deg, #180f4a, #090422, black);
+    background-image: linear-gradient(180deg, #180f4a, #090422, black);
     text-align: center;
     border-top: 5px solid #180f4a;
 }
 
-
 .logo-rodape {
     padding: 100px;
-
 }
 
 .agencia {
-    font-family: 'lobster', cursive;
+    font-family: 'Lobster', cursive;
     color: white;
-    font-family: 34px;
+    font-size: 34px; /* Corrigido de font-family */
+    margin: 0;
 }
 
-#botao-rodape{
+.botoes-rodape-container {
+    display: block; /* Garante que fiquem na mesma linha */
+    margin-top: 20px;
+}
+
+#botao-rodape {
     background: #180f4a;
     padding: 10px 25px;
     color: white;
@@ -186,14 +255,22 @@ footer {
     margin-right: 2%;
     margin-left: 1%;
     text-decoration: none;
+    display: inline-block;
 }
 
-#botao-rodape:hover{
+#botao-rodape:hover {
     border: none;
     background: #dd1818;
 }
 
-#botaofooter{
-    display: none;
+#botaofooter {
+    display: none; /* Escondido no desktop */
+    background: #180f4a;
+    padding: 10px 25px;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
 }
-
+#botaofooter:hover {
+    background: #dd1818;
+}
