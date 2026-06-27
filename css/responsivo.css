@@ -1,32 +1,35 @@
 /* =========================================================
-   MEDIA QUERY PARA TABLETS E CELULARES (ABAIXO DE 1005PX)
-   Aqui está a mágica do menu hambúrguer!
+   MEDIA QUERY PARA MOBILE (ABAIXO DE 1005PX)
+   Ativa o hambúrguer e ajusta o layout
    ========================================================= */
 @media screen and (max-width: 1005px) {
     
-    /* --- Ajustes Gerais da Navbar para Mobile --- */
+    /* --- Navbar Mobile --- */
     .navbar {
-        height: 80px; /* Reduzida um pouco a altura */
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
+        position: fixed; /* Garante que fique no topo */
+        height: 80px;
+        justify-content: space-between; /* Logo na esquerda, hambúrguer na direita */
         padding: 0 5%;
         z-index: 1000;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+        flex: auto;
+        margin: 0;
+        text-align: left;
     }
 
     .logo h1 {
-        font-size: 28px; /* Texto do logo menor */
+        font-size: 28px;
     }
 
-    /* --- Estilização do Botão Hambúrguer --- */
+    /* --- Botão Hambúrguer (Ativado) --- */
     .hamburger {
-        display: block; /* Visível no mobile */
+        display: block;
         cursor: pointer;
         background: none;
         border: none;
-        z-index: 1001; /* Fica acima do menu aberto */
+        z-index: 1001;
         padding: 0;
     }
 
@@ -40,104 +43,90 @@
         border-radius: 3px;
     }
 
-    /* Animação do Hambúrguer para 'X' quando ativo (aberto) */
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0; /* Linha do meio some */
-    }
+    /* Animação para 'X' */
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg); /* Linha superior vira barra do X */
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg); /* Linha inferior vira a outra barra do X */
-    }
-
-    /* --- Estilização do Menu Mobile (Deslizante) --- */
+    /* --- Menu Mobile Deslizante --- */
     .menu {
-        display: flex; /* Flex para alinhar itens em coluna */
+        display: flex;
         position: fixed;
-        left: -100%; /* Escondido fora da tela (à esquerda) */
-        top: 80px; /* Começa exatamente abaixo da navbar */
+        left: -100%; /* Escondido à esquerda */
+        top: 80px;
         flex-direction: column;
-        justify-content: flex-start; /* Alinha no topo do menu */
         background-color: #fff;
-        width: 75%; /* Ocupa 75% da largura da tela */
-        height: calc(100vh - 80px); /* Ocupa toda a altura visível abaixo da navbar */
+        width: 75%;
+        height: calc(100vh - 80px);
         text-align: center;
-        transition: left 0.4s ease-in-out; /* Animação suave de deslizamento */
+        transition: left 0.4s ease-in-out;
         box-shadow: 5px 0 15px rgba(0,0,0,0.1);
         z-index: 1000;
-        padding-top: 40px; /* Padding interno no topo do menu */
+        padding: 40px 0;
     }
 
-    /* Classe ativada pelo JS para mostrar o menu */
+    /* Classe ativa para mostrar o menu */
     .menu.active {
-        left: 0; /* Desliza para dentro da tela */
+        left: 0;
     }
 
     .menu-item {
         width: 100%;
         display: block;
-        margin: 0;
         padding: 15px;
-        color: #180f4a;
+        margin: 0;
         font-size: 19px;
-        font-weight: 500;
-        transition: background 0.3s;
     }
 
     .menu-item:not(#botao):hover {
         background-color: #f4f4f4;
-        box-shadow: none; /* Remove a sombra do desktop */
+        border-top: none;
         color: #dd1818;
     }
 
-    /* Ajuste específico para o botão de Projetos DENTRO do menu mobile */
+    /* Botão Projetos dentro do menu mobile */
     #botao {
         background: #180f4a;
         color: white;
-        margin: 20px auto; /* Centralizado com margem top/bottom */
-        width: 85%; /* Botão largo centralizado */
+        margin: 20px auto;
+        width: 85%;
         border-radius: 5px;
         padding: 12px;
-        display: block;
-        text-align: center;
+        margin-right: auto; /* Sobrescreve original */
+        margin-left: auto; /* Sobrescreve original */
     }
 
-    /* --- Overlay Negrescido (Fundo) --- */
+    /* Overlay Negrescido */
     .menu-overlay {
-        display: none; /* Escondido por padrão */
+        display: none;
         position: fixed;
         top: 80px;
         left: 0;
         width: 100%;
         height: calc(100vh - 80px);
-        background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro semitransparente */
-        z-index: 999; /* Fica entre a página e o menu mobile */
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
         opacity: 0;
         transition: opacity 0.4s ease;
     }
 
-    /* Classe ativada pelo JS para mostrar o overlay */
     .menu-overlay.active {
         display: block;
         opacity: 1;
     }
 
-    /* --- Ajustes de Cabeçalho no Mobile --- */
+    /* --- Ajustes de Layout Mobile --- */
     .header {
-        padding-top: 130px; /* Espaço para navbar fixa */
+        padding-top: 130px; /* Compensa navbar fixa */
         text-align: center;
     }
 
     .headline {
         flex: 100%;
-        margin-right: 0;
-        margin-bottom: 40px;
+        margin: 5%;
     }
 
-    /* Reduzindo os tamanhos do cabeçalho */
+    /* Ajuste de fontes do header (80px e 50px são grandes demais) */
     .header h2 { margin-bottom: 5px; }
     .header-bemvindo { font-size: 30px !important; }
     .header-subnome { font-size: 16px !important; letter-spacing: 5px !important; }
@@ -148,27 +137,35 @@
         margin: 5%;
     }
 
-    /* --- Ajustes de Habilidades no Mobile --- */
+    /* Cards em coluna */
     .card {
-        flex: 1 1 100%; /* 1 card por linha no mobile */
         width: 100%;
+        margin: 10px 0;
     }
 
-    /* ✅ Ajuste no footer para botões alinhados */
+    /* Rodapé Mobile */
+    .logo-rodape {
+        padding: 50px 20px;
+    }
+
     .botoes-rodape-container {
+        display: flex;
         flex-direction: column;
         align-items: center;
         gap: 10px;
     }
 
-    #botao-rodape, #botaofooter {
+    #botao-rodape {
         width: 100%;
         max-width: 300px;
         margin: 0;
     }
 
-    /* 🔓 Exibe o botão "Projetos" no footer no mobile */
+    /* Exibe botão Projetos no rodapé */
     #botaofooter {
         display: inline-block;
+        width: 100%;
+        max-width: 300px;
+        margin: 0;
     }
 }
