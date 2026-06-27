@@ -5,23 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="portifolio">
     <meta name="keywords" content="programação, desenvolvimento, portifolio">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsivo.css">
-    <link rel="stylesheet" href="css/modal.css">
-    <title>Bruno Correia</title>
+    
+    <title>Bruno Correia - Portfólio</title>
 </head>
 <body>
+    
     <nav class="navbar">
         <div class="logo">
             <h1>Bruno Correia</h1>
         </div>
-        <div class="menu">
-            <a href="#">Home</a>
-            <a href="#" id="sobre-link">Sobre mim</a>
-            <a href="#habilidades">Habilidades</a>
-            <a id="botao" href="https://github.com/brunocorreia7/API_TodoListDjango" target="_blank">Projetos</a>
+
+        <button class="hamburger" id="hamburger" aria-label="Abrir Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <div class="menu" id="menu">
+            <a href="#" class="menu-item">Home</a>
+            <a href="#" id="sobre-link" class="menu-item">Sobre mim</a>
+            <a href="#habilidades" class="menu-item">Habilidades</a>
+            <a id="botao" class="menu-item" href="https://github.com/brunocorreia7/API_TodoListDjango" target="_blank">Projetos</a>
         </div>
     </nav>
+
+    <div class="menu-overlay" id="menu-overlay"></div>
 
     <div id="sobre-modal" class="modal">
         <div class="modal-content">
@@ -31,78 +46,77 @@
         </div>
     </div>
 
-
     <header class="header">
         <div class="headline">
-            <h2 style="font-size: 50px;">Bem vindo!</h2>
-            <h2 style="letter-spacing: 15px;">eu sou Bruno Correia</h2>
-            <h2 style="font-size: 80px;">Desenvolvedor de Software</h2>
-
+            <h2 class="header-bemvindo">Bem vindo!</h2>
+            <h2 class="header-subnome">eu sou Bruno Correia</h2>
+            <h2 class="header-titulo">Desenvolvedor de Software</h2>
         </div>
         <div class="img-headline">
-            <img src="fotobruno1.jpeg" alt="minhafoto" style="max-width: 90%;">
-
+            <img src="fotobruno1.jpeg" alt="Foto de Bruno Correia, Desenvolvedor">
         </div>
-        
     </header>
 
     <section id="habilidades">
         <h2>Minhas habilidades</h2>
-        <div class="servicos">
+        <div class="servicos-container">
+            
             <div class="card">
-                <img src="web.png">
-                <div class="card-text">
-                <h3>Desenvolvimento web</h3>
-                <p>Desenvolvo aplicações web focadas em performance e usabilidade, unindo front-end e back-end para criar soluções completas e eficientes.</p>
+                <img src="web.png" alt="Ícone Desenvolvimento Web">
+                <div class="card-content">
+                    <div class="card-text">
+                        <h3>Desenvolvimento web</h3>
+                        <p>Desenvolvo aplicações web focadas em performance e usabilidade, unindo front-end e back-end para criar soluções completas e eficientes.</p>
+                    </div>
+                    <div class="texto-oculto">
+                        <h3>Sobre desenvolvimento web</h3>
+                        <p>Desenvolvimento web é o processo de criação de sites, aplicações e sistemas que funcionam na internet. Isso envolve desde o desenvolvimento do front-end (a parte visual e interativa que o usuário vê e usa) até o back-end (a parte responsável por processar dados, armazenar informações e garantir o funcionamento do site).</p>
+                    </div>
+                </div>
             </div>
-            <div class="texto-oculto">
-                <h3>Sobre desenvolvimento web</h3>
-                <p>Desenvolvimento web é o processo de criação de sites, aplicações e sistemas que funcionam na internet. Isso envolve desde o desenvolvimento do front-end (a parte visual e interativa que o usuário vê e usa) até o back-end (a parte responsável por processar dados, armazenar informações e garantir o funcionamento do site).</p>
-            </div>
-            </div>
-            <div class="card">
-                <img src="pc.png">
-                <div class="card-text">
-                <h3>Minha stack</h3>
-                <p>Atualmente uso Python/Django no Backend e Html, Css E Javascript no Front.
-                    
-                </p>
-            </div>
-            <div class="texto-oculto">
-                <h3>Outros conhecimentos</h3>
-                <p>Analise de Dados e automações usando Python.</p>
-            </div>
-            </div>
-            <div class="card">
-                <img src="cursos.png">
-                <div class="card-text">
-                <h3>Cursos</h3>
-                <p>Python Backend developer Bootcamp, Fundamentos de POO com Java, versionamento de código com Git e Github. 
 
-                </p>
+            <div class="card">
+                <img src="pc.png" alt="Ícone Computador">
+                <div class="card-content">
+                    <div class="card-text">
+                        <h3>Minha stack</h3>
+                        <p>Atualmente uso Python/Django no Backend e HTML, CSS e JavaScript no Front.</p>
+                    </div>
+                    <div class="texto-oculto">
+                        <h3>Outros conhecimentos</h3>
+                        <p>Analise de Dados e automações usando Python.</p>
+                    </div>
+                </div>
             </div>
-            <div class="texto-oculto">
-                <h3>mais cursos</h3>
-                <p>No meu Linkedln você pode conferir todos os meus certificados.
-                </p>
-            </div>
+
+            <div class="card">
+                <img src="cursos.png" alt="Ícone Cursos">
+                <div class="card-content">
+                    <div class="card-text">
+                        <h3>Cursos</h3>
+                        <p>Python Backend developer Bootcamp, Fundamentos de POO com Java, versionamento de código com Git e Github.</p>
+                    </div>
+                    <div class="texto-oculto">
+                        <h3>mais cursos</h3>
+                        <p>No meu LinkedIn você pode conferir todos os meus certificados.</p>
+                    </div>
+                </div>
             </div>
 
         </div>
-
     </section>
 
-    
-    
     <footer>
         <div class="logo-rodape">
             <h1 class="agencia">Link das minhas Redes</h1>
-            <p style="color: white;">clique nos botões para acessar</p>
-            <a id="botao-rodape" href="https://www.linkedin.com/in/brunocorreia7" target="_blank">Linkedln</a>
-            <a id="botao-rodape" href="https://github.com/brunocorreia7" target="_blank">Github</a>
-            <a id="botaofooter" href="https://github.com/brunocorreia7/SistemadeCadastroVersao2" target="_blank">Projetos</a>
+            <p>clique nos botões para acessar</p>
+            <div class="botoes-rodape-container">
+                <a id="botao-rodape" href="https://www.linkedin.com/in/brunocorreia7" target="_blank">LinkedIn</a>
+                <a id="botao-rodape" href="https://github.com/brunocorreia7" target="_blank">Github</a>
+                <a id="botaofooter" href="https://github.com/brunocorreia7/SistemadeCadastroVersao2" target="_blank">Projetos</a>
+            </div>
         </div>
-        <strong style="color: white;">© Bruno Correia</strong>
+        <strong class="copyright">© Bruno Correia</strong>
     </footer>
 
     <script src="script.js"></script>
