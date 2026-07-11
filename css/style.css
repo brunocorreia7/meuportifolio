@@ -247,7 +247,8 @@ footer {
     margin-top: 20px;
 }
 
-#botao-rodape {
+
+.botao-rodape {
     background: #180f4a;
     padding: 10px 25px;
     color: white;
@@ -258,7 +259,7 @@ footer {
     display: inline-block;
 }
 
-#botao-rodape:hover {
+.botao-rodape:hover {
     border: none;
     background: #dd1818;
 }
